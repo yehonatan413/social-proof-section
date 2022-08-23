@@ -8,9 +8,20 @@
 --LightGrayishMagenta: hsl(300, 24%, 96%);
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
     margin: 0;
     font-family: "League Spartan", sans-serif;
+}
+
+.top_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 main {
@@ -56,6 +67,7 @@ h1 {
 
 .rating_container {
     padding-block: 0.9rem;
+    width: 100%;
     box-sizing: border-box;
     margin-block: 0.5rem;
     background-color: var(--LightGrayishMagenta);
@@ -127,7 +139,19 @@ h1 {
     color: var(--DarkGrayishMagenta);
 }
 
+.bottom_image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
 @media only screen and (min-width : 1030px)  {
+
+    .top_image {
+        content: url("images/bg-pattern-top-desktop.svg");
+    }
+
     main {
         flex-direction: row;
         flex-wrap: wrap;
@@ -194,10 +218,14 @@ h1 {
     .review_container:nth-child(3)  {
         margin-top: 3rem;
         margin-bottom: -3rem;
-    }   
+    }
+
+    .bottom_image {
+        content: url("images/bg-pattern-bottom-desktop.svg");
+    }
 }
 
-@media only screen and (max-width : 1250px) {
+@media only screen and (min-width: 1030px) and (max-width : 1250px) {
     .ratings_section {
         flex-basis: 55%;
     }
